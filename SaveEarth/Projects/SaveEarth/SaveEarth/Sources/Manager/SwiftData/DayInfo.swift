@@ -11,17 +11,24 @@ import SwiftData
 @Model
 final class DayInfo {
   #Unique<DayInfo>([\.date])
-  let date: String
+  let date: Date
   let temperatureData: TemperatureSwiftDataModel
   var missionList: [Mission]
 
   public init(
-    date: String,
+    date: Date,
     temperatureData: TemperatureSwiftDataModel,
     missionList: [Mission]
   ) {
     self.date = date
     self.temperatureData = temperatureData
     self.missionList = missionList
+  }
+}
+
+extension DayInfo {
+
+  var isToday: Bool {
+    Calendar.current.isDateInToday(date)
   }
 }

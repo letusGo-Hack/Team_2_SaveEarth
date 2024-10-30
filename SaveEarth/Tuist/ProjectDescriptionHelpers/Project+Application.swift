@@ -58,6 +58,12 @@ extension Project {
         "CFBundleIconName": "AppIcon",
         "NSAppTransportSecurity": [
           "NSAllowsArbitraryLoads": true
+        ],
+        "CFBundleURLTypes": [
+          [
+            "CFBundleTypeRole": "Editor",
+            "CFBundleURLSchemes": ["$(URL_SCHEMES)"]
+          ]
         ]
       ]),
       sources: ["SaveEarth/Sources/**"],

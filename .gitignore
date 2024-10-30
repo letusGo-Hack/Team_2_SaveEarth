@@ -9,3 +9,4 @@ SaveEarth/SaveEarth.xcodeproj/project.xcworkspace/xcuserdata/marco.xcuserdatad/U
 
 # Fastlane private API token
 SaveEarth/fastlane/gitPAT.txt
+.DS_Store

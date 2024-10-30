@@ -16,8 +16,24 @@ public extension Configuration {
   
   static func configure(configurations: [ConfigScheme]) -> [Configuration] {
     return configurations.map { $0.rawValue }.map { configName -> Configuration in
-      guard configName != .release else { return .release(name: configName, xcconfig: .xcconfigPath(configName.rawValue))}
-      return .debug(name: configName, xcconfig: .xcconfigPath(configName.rawValue))
+      switch configName {
+        case .release:
+            return .release(
+              name: configName,
+              settings: .init(uniqueKeysWithValues: [("URL_SCHEMES", "saveearth")]),
+              xcconfig: .xcconfigPath(configName.rawValue)
+            )
+        
+        case .debug:
+          fallthrough
+          
+        default:
+          return .debug(
+            name: configName,
+            settings: .init(uniqueKeysWithValues: [("URL_SCHEMES", "saveearth-dev")]),
+            xcconfig: .xcconfigPath(configName.rawValue)
+          )
+      }
     }
   }
   

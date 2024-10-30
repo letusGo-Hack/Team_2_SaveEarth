@@ -5,7 +5,7 @@
 //  Created by 송하민 on 6/29/24.
 //
 
-import Charts
+//import Charts
 import SwiftUI
 
 struct ChartView: View {
@@ -14,13 +14,14 @@ struct ChartView: View {
   @Binding var lon: CGFloat
 
   var body: some View {
-    Chart {
-      PointPlot(
-        DataPoint.mockData,
-        x: .value("Longitude", \.mapProjection.xPoint),
-        y: .value("Latitude", \.mapProjection.yPoint)
-      )
-    }
+//    Chart {
+//      PointPlot(
+//        DataPoint.mockData,
+//        x: .value("Longitude", \.mapProjection.xPoint),
+//        y: .value("Latitude", \.mapProjection.yPoint)
+//      )
+//    }
+    Text("aaa")
   }
 }
 

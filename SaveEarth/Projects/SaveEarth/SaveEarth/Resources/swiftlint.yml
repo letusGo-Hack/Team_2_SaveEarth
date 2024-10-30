@@ -76,3 +76,5 @@ disabled_rules:
 - class_delegate_protocol # 클래스 델리게이트 프로토콜이 적절하게 사용되는지 확인
 - cyclomatic_complexity # 함수의 복잡도가 적절한지 확인
 - empty_enum_arguments # 열거형 케이스에 인자가 없는지 확인
+- switch_case_alignment
+- nesting
